@@ -5,9 +5,8 @@ language: zh-CN
 # main menu navigation
 menu:
   Home: /
-  About: /about
-  Contact: /contact
   Archives: /archives
+  About: /about
 
 # Miscelaneous
 favicon: /favicon.ico

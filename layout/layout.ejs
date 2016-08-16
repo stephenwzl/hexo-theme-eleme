@@ -1,16 +1,16 @@
 
 <%
 var pageTitle = page.title || config.subtitle || '';
-if (is_archive()) pageTitle = 'Archives';
+if (is_archive()) pageTitle = _p('Archives');
 if (is_tag()) pageTitle = 'Tag: ' + page.tag;
 if (is_category()) pageTitle = 'Category: ' + page.category;
 if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
 if (is_year()) pageTitle += ': ' + page.year;
-pageTitle += ' [ ' + config.title + ' ]';
+pageTitle += ' - ' + config.title;
 %>
 
 <!DOCTYPE html>
-<html lang="<%=config.language%>">
+<html lang="<%=theme.language%>">
 <head>
   <meta charset="UTF-8">
   <title><%=pageTitle%></title>
@@ -23,26 +23,26 @@ pageTitle += ' [ ' + config.title + ' ]';
 </head>
 <body>
 
-<div id="menu-outer">
+<div id="eleme-menu-outer">
+  <a href="/"><img src="/img/eleme-logo.png"></a>
   <div id="menu-inner">
     <% Object.keys(theme.menu).forEach(function(key) { %>
-      <a href="<%=theme.menu[key]%>"><%=key%></a>
+      <a href="<%=theme.menu[key]%>"><%=_p(key)%></a>
     <% }); %>
   </div>
 </div>
 
-<div id="content-outer">
+<div id="eleme-content-outer">
   <div id="content-inner">
     <%- body %>
   </div>
 </div>
 
-<div id="bottom-outer">
+<div id="eleme-bottom-outer">
   <div id="bottom-inner">
     Site by <%=config.author%> using
-    <a href="http://hexo.io">hexo blog framework</a>.
+    <span class="eleme-copyright">eleme-mobile hexo theme</span>.
     <br>
-    <a href="<%=config.root%>">Home</a>
   </div>
 </div>
 

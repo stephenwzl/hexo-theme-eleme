@@ -1,14 +1,17 @@
 
 <% if (site.posts.length > 0) { %>
   <div id="recent-posts">
-    <h1>Recent Posts</h1>
+    <p class="recent-posts-hint"><%=_p('recent_posts')%></p>
     <% site.posts.sort('date', -1).limit(10).each(function(post) { %>
       <div class="recent-post-item">
-        <a href="<%=config.root + post.path%>"><%=post.title%></a>
+        <a href="<%=config.root + post.path%>" class="recent-posts-title"><%=post.title%></a>
         <% if (post.date) { %>
+          <br>
+          <p class="release">发表于
           <time datetime="<%=post.date.toJSON()%>">
             <%=date(post.date)%>
           </time>
+          </p>
         <% } %>
       </div>
     <% }); %>
