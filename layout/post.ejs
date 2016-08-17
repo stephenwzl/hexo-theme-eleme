@@ -1,7 +1,23 @@
-
 <article id="post">
-  <h1><%=page.title%></h1>
-  <%-page.content%>
+    <h1 class="post-title"><%= page.title %></h1>
+    <p class="post-meta">
+        <% if (page.date) { %>
+        <span class="release">发表于
+            <time datetime="<%= page.date.toJSON() %>">
+            <%= date(page.date) %>
+            </time>
+        </span>
+        <% } %>
+        <% if (page.categories.data.length > 0) { %>
+        <span>&nbsp;分类: <a href="<%= url_for(page.categories.data[0].path) %>"><%= page.categories.data[0].name %></a></span>
+        <% } %>
+        <% if (page.author) { %>
+        <span class="author">&nbsp;authored by <a target="_blank" href="https://github.com/<%=page.author%>"><%= page.author %></a></span>
+        <% } %>
+    </p>
+    <div class="post-wrapper">
+        <%- page.content %>
+    </div>
 </article>
 
-<%-partial('partials/pagination')%>
+<%- partial('partials/pagination') %>

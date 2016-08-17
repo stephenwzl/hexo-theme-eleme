@@ -6,8 +6,8 @@ html
   background: white
   height: 100%
 body
-  background: eleme-background-light
-  margin: 0 auto
+  background: eleme-background-light !important
+  margin: 0 auto !important
   max-width: eleme-max-width
   font-family: font-sans
   height: 100%
@@ -20,6 +20,9 @@ body
 a
   text-decoration: none
 
+a:visited
+  color: eleme-red
+
 #eleme-content-outer
   background: #fdfdfa
   min-height: 100%
@@ -27,6 +30,8 @@ a
   width: 100%
   overflow: hidden
 
+@import "style.styl"
 @import "_partial/menu.styl"
 @import "_partial/bottom.styl"
 @import "_partial/index.styl"
+@import "_partial/post.styl"

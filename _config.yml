@@ -14,7 +14,9 @@ favicon: /favicon.ico
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/eleme-theme.css
+- /css/prettify.css
 
 # scripts loaded in the end of the body
 scripts:
+- /js/prettify.js
 - /js/eleme-theme.js
