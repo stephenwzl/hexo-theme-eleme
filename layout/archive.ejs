@@ -7,19 +7,8 @@ var categoriesList = list_categories({ show_count: false }),
 
 <% if (!is_year()) { %>
   <div id="archive">
-
-    <h1>Archives</h1>
-
-    <% if (theme.atom) { %>
-      <p>
-        The feed is available via
-        <a href="<%=theme.atom%>">atom</a>.
-      </p>
-      <br>
-    <% } %>
-
-    <aside>
-      <h2>Categories</h2>
+    <aside class="archive-categories">
+      <h2>分类</h2>
       <% if (categoriesList) { %>
         <%-categoriesList%>
       <% } else { %>
@@ -28,29 +17,29 @@ var categoriesList = list_categories({ show_count: false }),
     </aside>
     <br>
 
-    <aside>
-      <h2>Tags</h2>
+    <aside class="archive-tags">
+      <h2>标签</h2>
       <% if (tagsList) { %>
         <%-tagsList%>
       <% } else { %>
-        <p>None.</p>
+        <p>没有标签</p>
       <% } %>
     </aside>
     <br>
 
-    <aside>
-      <h2>Archives</h2>
+    <aside class="archive-archive">
+      <h2>归档</h2>
       <% if (archivesList) { %>
         <%-archivesList%>
       <% } else { %>
-        <p>None.</p>
+        <p>还没有内容</p>
       <% } %>
     </aside>
 
   </div>
 <% } else { %>
 
-  <h1><%=page.month + '/' + page.year%></h1>
+  <h1 class="archive-item-title"><%=page.month + '/' + page.year%></h1>
 
   <% page.posts.each(function(article) { %>
     <div class="archive-item">
