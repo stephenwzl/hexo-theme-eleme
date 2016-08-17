@@ -19,11 +19,11 @@ if (pageTitle.length == 0) {
   <meta charset="UTF-8">
     <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1">-->
   <title><%=pageTitle%></title>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from config.yml -->
     <% theme.stylesheets.forEach(function(url) { %>
-      <link rel="stylesheet" href="<%=url%>">
+      <link rel="stylesheet" href="<%=url_for(url)%>">
     <% }); %>
   <% } %>
 </head>
@@ -31,10 +31,10 @@ if (pageTitle.length == 0) {
 
 <div id="wrapper">
     <div id="eleme-menu-outer">
-        <a href="/"><img src="/img/eleme-logo.png"></a>
+        <a href="/"><img src="<%=url_for('/img/eleme-logo.png')%>"></a>
         <div id="menu-inner">
             <% Object.keys(theme.menu).forEach(function(key) { %>
-            <a href="<%=theme.menu[key]%>"><%=_p(key)%></a>
+            <a href="<%=url_for(theme.menu[key])%>"><%=_p(key)%></a>
             <% }); %>
         </div>
     </div>
@@ -55,7 +55,7 @@ if (pageTitle.length == 0) {
 
     <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
     <% theme.scripts.forEach(function(url) { %>
-    <script src="<%=url%>"></script>
+    <script src="<%=url_for(url)%>"></script>
     <% }); %>
     <% } %>
 </div>
