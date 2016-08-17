@@ -13,6 +13,9 @@
           </time>
           </p>
         <% } %>
+        <% if (post.author) {%>
+          <span class="author">| authored by <%=post.author%></span>
+        <% }%>
       </div>
     <% }); %>
   </div>
