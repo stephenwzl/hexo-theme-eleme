@@ -1,9 +1,9 @@
 
 <nav id="pagination">
   <% if (page.prev_link) { %>
-    <a href="<%=url_for(page.prev_link)%>" class="prev-post"><span class="fa fa-angle-left"></span> 上一页</a>
+    <a href="<%=url_for(page.prev_link)%>" class="prev-post">< 上一页</a>
   <% } else if (page.prev && page.prev.path) { %>
-    <a href="<%=url_for(page.prev.path)%>" class="prev-post"><span class="fa fa-angle-left"></span> <%=page.prev.title%></a>
+    <a href="<%=url_for(page.prev.path)%>" class="prev-post">< <%=page.prev.title%></a>
   <% } %>
 
   <% if (typeof page.current === 'number' && typeof page.total === 'number') { %>
@@ -13,8 +13,8 @@
   <% } %>
 
   <% if (page.next_link) { %>
-    <a href="<%=url_for(page.next_link)%>" class="next-post">下一页 <span class="fa fa-angle-right"></span></a>
+    <a href="<%=url_for(page.next_link)%>" class="next-post">下一页 ></a>
   <% } else if (page.next && page.next.path) { %>
-    <a href="<%=url_for(page.next.path)%>" class="next-post"><%=page.next.title%> <span class="fa fa-angle-right"></span></a>
+    <a href="<%=url_for(page.next.path)%>" class="next-post"><%=page.next.title%> ></a>
   <% } %>
 </nav>

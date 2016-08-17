@@ -19,7 +19,6 @@ if (pageTitle.length == 0) {
   <meta charset="UTF-8">
     <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1">-->
   <title><%=pageTitle%></title>
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from config.yml -->
     <% theme.stylesheets.forEach(function(url) { %>
@@ -47,7 +46,7 @@ if (pageTitle.length == 0) {
 
     <div id="eleme-bottom-outer">
         <div id="bottom-inner">
-            <p class="eleme-copyright">&copy; copyright 2016 by <%=config.author%></p>
+            <p class="eleme-copyright">&copy; copyright 2016 by <%=config.title%></p>
             <p class="eleme-theme-copyright">eleme-mobile hexo theme by <a target="_blank" href="https://github.com/stephenwzl">stephenw</a></p>
             <br>
         </div>
