@@ -1,48 +1,4 @@
-@import "nib"
 @import "_variables"
-@import "_util/mixin"
-@import "_util/grid"
-
-input, button
-  margin: 0
-  padding: 0
-  &::-moz-focus-inner
-    border: 0
-    padding: 0
-
-body
-  font: font-size font-sans
-  -webkit-text-size-adjust: 100%
-
-
-#container
-  position: relative
-
-.mobile-nav-on
-  overflow: hidden
-
-#wrap
-  height: 100%
-  width: 100%
-  position: absolute
-  top: 0
-  left: 0
-  transition: 0.2s ease-out
-  z-index: 1
-  background: color-background
-  .mobile-nav-on &
-    left: mobile-nav-width
-
-if sidebar and sidebar isnt bottom
-  #main
-    @media mq-normal
-      column(main-column)
-
-if sidebar is left
-  @media mq-normal
-    #main
-      float: right
-
 @import "_extend"
 @import "_partial/article"
 @import "_partial/highlight"
