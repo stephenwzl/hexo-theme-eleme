@@ -1,20 +1,23 @@
 
 <nav id="pagination">
-  <% if (typeof(page.prev) === 'number' && page.prev !== 0) { %>
-    <a href="<%=url_for(page.prev_link)%>" class="prev-page">< 上一页</a>
-  <% } else if (page.prev && page.prev.path) { %>
-    <a href="<%=url_for(page.prev.path)%>" class="prev-post">< <%=page.prev.title%></a>
-  <% } %>
+  <div class="pagination-number">
+      <% if (typeof page.current === 'number' && typeof page.total === 'number') { %>
+      <p class="page-number">
+          第<%=page.current%>/<%=page.total%>页
+      </p>
+      <% } %>
+  </div>
+ <div class="pagination-indicator">
+     <% if (typeof(page.prev) === 'number' && page.prev !== 0) { %>
+     <a href="<%=url_for(page.prev_link)%>" class="prev-page">< 上一页</a>
+     <% } else if (page.prev && page.prev.path) { %>
+     <a href="<%=url_for(page.prev.path)%>" class="prev-post">< <%=page.prev.title%></a>
+     <% } %>
 
-  <% if (typeof page.current === 'number' && typeof page.total === 'number') { %>
-    <p class="page-number">
-       第<%=page.current%>/<%=page.total%>页
-    </p>
-  <% } %>
-
-  <% if (page.next_link) { %>
-    <a href="<%=url_for(page.next_link)%>" class="next-page">下一页 ></a>
-  <% } else if (page.next && page.next.path) { %>
-    <a href="<%=url_for(page.next.path)%>" class="next-post"><%=page.next.title%> ></a>
-  <% } %>
+     <% if (page.next_link) { %>
+     <a href="<%=url_for(page.next_link)%>" class="next-page">下一页 ></a>
+     <% } else if (page.next && page.next.path) { %>
+     <a href="<%=url_for(page.next.path)%>" class="next-post"><%=page.next.title%> ></a>
+     <% } %>
+ </div>
 </nav>
