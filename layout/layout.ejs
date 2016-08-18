@@ -30,7 +30,7 @@ if (pageTitle.length == 0) {
 
 <div id="wrapper">
     <div id="eleme-menu-outer">
-        <a href="/"><img src="<%=url_for('/img/eleme-logo.png')%>"></a>
+        <a href="<%=url_for('/')%>"><img src="<%=url_for('/img/eleme-logo.png')%>"></a>
         <div id="menu-inner">
             <% Object.keys(theme.menu).forEach(function(key) { %>
             <a href="<%=url_for(theme.menu[key])%>"><%=_p(key)%></a>
