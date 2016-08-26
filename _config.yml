@@ -19,5 +19,6 @@ stylesheets:
 scripts:
 - /js/eleme-theme.js
 
-comment: true
-disqusurl: //hexo-theme.disqus.com/embed.js
+# set comment to true & change disqus_shortname to enable comment
+comment: false
+#disqus_shortname: your short name
