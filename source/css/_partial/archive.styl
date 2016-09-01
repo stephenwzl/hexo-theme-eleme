@@ -69,9 +69,11 @@
     float: left
   .next
     float: right
+    @media screen and (max-width: 640px)
+      float: none
   .page-number
     display: inline-block
-    @media mq-mobile
+    @media screen and (max-width:640px)
       display: none
   .current
     color: color-default
